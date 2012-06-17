@@ -10,7 +10,7 @@ describe PagesController do
     
     it "should have right title" do
       get 'home'
-      response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | Home"
+      response.should have_selector "title", :content => "RubyGate CMS | Home"
     end
     
     it "should have an non empty body" do
@@ -27,7 +27,7 @@ describe PagesController do
     
     it "should have right title" do
       get 'about'
-      response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | About"
+      response.should have_selector "title", :content => "RubyGate CMS | About"
     end
     
     it "should have an non empty body" do
@@ -44,7 +44,7 @@ describe PagesController do
     
     it "should have right title" do
       get 'contact'
-      response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | Contact"
+      response.should have_selector "title", :content => "RubyGate CMS | Contact"
     end
     
     it "should have an non empty body" do
