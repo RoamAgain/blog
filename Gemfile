@@ -21,7 +21,7 @@ gem 'jquery-rails'
 
 group :test do
   gem 'rspec-rails'
-  gem 'capybara'
+  gem 'webrat'
   # System-dependent gems
   gem 'rb-inotify'
   gem 'rb-readline'
