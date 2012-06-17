@@ -4,13 +4,18 @@ describe PagesController do
   render_views
   describe "GET 'home'" do
     it "returns http success" do
-      get 'home'
+      get 'home' 
       response.should be_success
     end
     
     it "should have right title" do
       get 'home'
       response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | Home"
+    end
+    
+    it "should have an non empty body" do
+      get 'home'
+      response.body.should_not =~ /<body>\s*<\/body>/i
     end
   end
 
@@ -22,7 +27,12 @@ describe PagesController do
     
     it "should have right title" do
       get 'about'
-      response.should have_selector"title", :content => "Ruby on Rails Tutorial Sample App | About"
+      response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | About"
+    end
+    
+    it "should have an non empty body" do
+      get 'about'
+      response.body.should_not =~ /<body>\s*<\/body>/i
     end
   end
   
@@ -35,6 +45,11 @@ describe PagesController do
     it "should have right title" do
       get 'contact'
       response.should have_selector "title", :content => "Ruby on Rails Tutorial Sample App | Contact"
+    end
+    
+    it "should have an non empty body" do
+      get 'contact'
+      response.body.should_not =~ /<body>\s*<\/body>/i
     end
   end
 
