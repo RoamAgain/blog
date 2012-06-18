@@ -10,7 +10,7 @@ describe PagesController do
     
     it "should have right title" do
       get 'home'
-      response.should have_selector "title", :content => "RubyGate CMS | Home"
+      response.should have_selector "title", :text => "RubyGate CMS | Home"
     end
     
     it "should have an non empty body" do

@@ -18,3 +18,4 @@
 *.pyo
 .svn
 _svn
+.project
