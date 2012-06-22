@@ -4,58 +4,58 @@ describe "Static Pages" do
   describe "Home Page" do
     it "should have the h1  'RubyGate Blog'" do
 
-      visit '/static_pages/home'
+      visit root_path
       page.should have_selector 'h1',
-                    :text=>'RubyGate Blog'
+                    text: 'RubyGate Blog'
     end
     it "should have base title" do
-      visit '/static_pages/home'
+      visit root_path
       page.should have_selector 'title',
-                    :text=>"RubyGate Blog"
+                    text: "RubyGate Blog"
     end
     it "should have custom title" do
-      visit '/static_pages/home'
+      visit root_path
       page.should_not have_selector 'title',
-                    :text=>"| Home"
+                    text: "| Home"
     end
   end
   describe "Help Page" do
     it "should have the h1 'Help'" do
-      visit '/static_pages/help'
-      page.should have_selector 'h1',:text=>'Help'
+      visit help_path
+      page.should have_selector 'h1',text: 'Help'
     end
 
     it "should have right title" do
-      visit '/static_pages/help'
+      visit help_path
       page.should have_selector 'title',
-                    :text=>"RubyGate Blog | Help"
+                    text: "RubyGate Blog | Help"
     end
 
   end
 
   describe "About Page" do
     it "should have the h1 'About Us'" do
-      visit '/static_pages/about'
-      page.should have_selector 'h1',:text=>'About Us'
+      visit about_path
+      page.should have_selector 'h1',text: 'About Us'
     end
 
     it "should have right title" do
-      visit '/static_pages/about'
+      visit about_path
       page.should have_selector 'title',
-                    :text=>"RubyGate Blog | About Us"
+                    text: "RubyGate Blog | About Us"
     end
 
   end
   describe "Contact page" do
     it "should have the h1 'Contact'" do
-      visit '/static_pages/contact'
-      page.should have_selector 'h1',:text=>'Contact'
+      visit contact_path
+      page.should have_selector 'h1',text: 'Contact'
     end
 
     it "should have right title" do
-      visit '/static_pages/contact'
+      visit contact_path
       page.should have_selector 'title',
-                    :text=>"RubyGate Blog | Contact"
+                    text: "RubyGate Blog | Contact"
     end
 
   end
