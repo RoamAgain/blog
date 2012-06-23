@@ -17,7 +17,7 @@ describe "Static Pages" do
   describe "Help Page" do
 
     before { visit help_path }
-    
+
     it {should have_selector 'h1',text: 'Help'}
     it {should have_selector 'title',text: full_title('Help') }
 
@@ -26,7 +26,7 @@ describe "Static Pages" do
   describe "About Page" do
 
     before { visit about_path }
-    
+
     it {should have_selector 'h1',text: 'About Us'}
     it {should have_selector 'title', text: full_title('About Us')}
 
@@ -38,4 +38,19 @@ describe "Static Pages" do
     it { should have_selector 'h1',text: 'Contact'}
     it {should have_selector 'title',text: full_title('Contact')}
   end
+
+  it 'should have the right links on the layout' do
+    visit root_path
+
+    click_link 'About'
+    page.should have_selector 'title',text: full_title('About Us')
+    click_link 'Help'
+    page.should have_selector 'title', text: full_title('Help')
+    click_link 'Contact'
+    page.should have_selector 'title', text: full_title('Contact')
+    click_link 'Home'
+    click_link 'Sign Up!'
+    page.should have_selector 'title',text: full_title('Sign Up')
+  end
+
 end
