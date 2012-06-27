@@ -3,6 +3,10 @@
 	<name>rails_blog</name>
 	<comment></comment>
 	<projects>
+		<project>RSpec</project>
+		<project>Ruby</project>
+		<project>Ruby on Rails</project>
+		<project>Sass</project>
 	</projects>
 	<buildSpec>
 		<buildCommand>
