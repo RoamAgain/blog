@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   validates :name,presence: true, length: {maximum: 50}
 
   #contsant for valid mail REGEX
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[\w\-.]+\.[a-z]{2,}\z/i
+  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]{2,}\z/i
   #validates that email is non blank
   validates :email,presence: true, format: { with: VALID_EMAIL_REGEX},
                    uniqueness: { case_sensitive: false} #adds unique capability to attribute
