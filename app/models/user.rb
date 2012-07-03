@@ -1,7 +1,9 @@
 class User < ActiveRecord::Base
   # the attributes in the table editable from the web form should be present in the list
-  attr_accessible :name,:email
-  
+  attr_accessible :name,:email, :password, :password_confirmation
+
+  has_secure_password
+
   before_save { |user| user.email= user.email.downcase}
 
   #validates that name is not blank and the max length is 50
@@ -12,4 +14,7 @@ class User < ActiveRecord::Base
   #validates that email is non blank
   validates :email,presence: true, format: { with: VALID_EMAIL_REGEX},
                    uniqueness: { case_sensitive: false} #adds unique capability to attribute
+
+  validates :password, presence: true
+  validates :password_confirmation, presence: true, length: {minimum: 6}
 end
